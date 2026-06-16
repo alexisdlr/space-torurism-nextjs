@@ -20,7 +20,7 @@ export default function PageTransition({ children }: PageTransitionProps) {
         animate={{ opacity: 1, y: 0 }}
         exit={{ opacity: 0, y: -16 }}
         transition={{ duration: 0.35, ease: easeOut }}
-        className="relative z-10 flex min-h-0 w-full flex-1 flex-col overflow-hidden"
+        className="relative z-10 flex min-h-full w-full flex-col"
       >
         {children}
       </motion.div>

@@ -43,7 +43,7 @@ const HeroDestination = () => {
   const activeDestination = destinations[activeIndex];
 
   return (
-    <div className="flex min-h-0 w-full flex-1 flex-col p-10 md:p-16 lg:p-24 xl:px-38 xl:py-26 2xl:p-40">
+    <div className="flex w-full flex-col p-10 pb-24 md:p-16 md:pb-16 lg:min-h-full lg:flex-1 lg:pb-0 lg:p-24 xl:px-38 xl:py-26 2xl:p-40">
       <div className="flex justify-center md:justify-start mb-1 lg:mb-0 h-fit">
         <h1 className="font-barlow-condensed text-lg lg:text-3xl text-center lg:text-left text-preset-5 uppercase tracking-[2.7px]">
           <motion.span
