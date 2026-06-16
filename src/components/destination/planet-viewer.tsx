@@ -23,7 +23,7 @@ type PlanetViewerProps = {
 export function PlanetViewer({ modelPath, name }: PlanetViewerProps) {
   return (
     <div
-      className="mx-auto aspect-square h-[280px] w-[280px] lg:h-[400px] lg:w-[400px] xl:h-[500px] xl:w-[500px]"
+      className="mx-auto aspect-square h-[280px] w-[280px] lg:h-[400px] lg:w-[400px] xl:h-[550px] xl:w-[550px]"
       aria-label={`3D model of ${name}`}
     >
       <PlanetCanvas modelPath={modelPath} />

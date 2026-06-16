@@ -44,8 +44,8 @@ const HeroDestination = () => {
 
   return (
     <div className="flex min-h-0 w-full flex-1 flex-col p-10 md:p-16 lg:p-24 xl:px-38 xl:py-26 2xl:p-40">
-      <div className="flex h-fit">
-        <h1 className="font-barlow-condensed text-preset-5 uppercase tracking-[2.7px]">
+      <div className="flex justify-center md:justify-start mb-1 lg:mb-0 h-fit">
+        <h1 className="font-barlow-condensed text-lg lg:text-3xl text-center lg:text-left text-preset-5 uppercase tracking-[2.7px]">
           <motion.span
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -74,7 +74,7 @@ const HeroDestination = () => {
         </h1>
       </div>
 
-      <div className="my-16 grid w-full grid-cols-1 items-center gap-10 lg:my-34 lg:grid-cols-2 lg:gap-12">
+      <div className="my-4 grid w-full grid-cols-1 items-center gap-10 lg:my-34 lg:grid-cols-2 lg:gap-32">
         <PlanetViewer
           key={activeDestination.modelPath}
           modelPath={activeDestination.modelPath}
@@ -94,28 +94,28 @@ const HeroDestination = () => {
             onChange={setActiveIndex}
           />
 
-          <h2 className="mt-8 font-bellefair text-[56px] uppercase tracking-normal md:text-preset-3">
+          <h2 className="lg:mt-8 font-bellefair text-[56px] uppercase tracking-normal lg:text-preset-2">
             {activeDestination.name}
           </h2>
 
-          <p className="mt-6 max-w-md font-barlow text-preset-9 text-blue-300">
+          <p className="mt-6 max-w-md font-barlow text-sm lg:text-lg text-preset-9 text-blue-300">
             {activeDestination.description}
           </p>
 
-          <dl className="mt-6 flex w-full max-w-md gap-10 border-t border-white/20 pt-6 md:gap-16">
-            <div>
-              <dt className="font-barlow-condensed text-[14px] uppercase tracking-[2.36px] text-white/50">
+          <dl className="mt-2 lg:mt-10 flex flex-col md:flex-row md:justify-center lg:justify-start w-full max-w-md gap-10 border-t border-white/20 pt-6 md:gap-16">
+            <div className="mt-4">
+              <dt className="text-blue-300 font-barlow-condensed text-[14px] uppercase tracking-[2.36px] text-preset-7">
                 Avg. Distance
               </dt>
-              <dd className="mt-1 font-bellefair text-[28px] uppercase">
+              <dd className="mt-2 font-bellefair text-[28px] uppercase">
                 {activeDestination.distance}
               </dd>
             </div>
-            <div>
-              <dt className="font-barlow-condensed text-[14px] uppercase tracking-[2.36px] text-white/50">
+            <div className="mt-4">
+              <dt className="text-blue-300 font-barlow-condensed text-[14px] uppercase tracking-[2.36px] text-preset-7">
                 Est. Travel Time
               </dt>
-              <dd className="mt-1 font-bellefair text-[28px] uppercase">
+              <dd className="mt-2 font-bellefair text-[28px] uppercase ">
                 {activeDestination.travel}
               </dd>
             </div>

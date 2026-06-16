@@ -26,7 +26,7 @@ export function DestinationTabs({
           aria-current={activeIndex === index ? "page" : undefined}
           onClick={() => onChange(index)}
           className={cn(
-            "font-barlow-condensed text-[16px] uppercase tracking-[2.7px] transition-colors md:mr-12 md:border-b-[3px] md:pb-4 md:text-[28px]",
+            "font-barlow-condensed text-[16px] uppercase tracking-[2.7px] transition-colors md:mr-12 md:border-b-[3px] md:pb-4 text-preset-8",
             activeIndex === index
               ? "border-b-[3px] border-white pb-4 text-white"
               : "border-b-[3px] border-transparent pb-4 text-white/50 hover:text-white/80",
