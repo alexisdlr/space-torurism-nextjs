@@ -1,26 +1,62 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #0b0d17;
+  --foreground: #ffffff;
+  --accent: #d0d6f9;
 }
 
 @theme inline {
+  --color-blue-900: #0b0d17;
+  --color-blue-300: #d0d6f9;
+  --color-white: #ffffff;
+
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+  --color-accent: var(--accent);
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --font-bellefair: var(--font-bellefair-family);
+  --font-barlow: var(--font-barlow-family);
+  --font-barlow-condensed: var(--font-barlow-condensed-family);
+
+  --text-preset-1: 144px;
+  --text-preset-1--line-height: 171.9%;
+  --text-preset-1--letter-spacing: 0px;
+
+  --text-preset-2: 100px;
+  --text-preset-2--line-height: 114.6%;
+  --text-preset-2--letter-spacing: 0px;
+
+  --text-preset-3: 56px;
+  --text-preset-3--line-height: 64.2%;
+  --text-preset-3--letter-spacing: 0px;
+
+  --text-preset-4: 32px;
+  --text-preset-4--line-height: 36.7%;
+  --text-preset-4--letter-spacing: 0px;
+
+  --text-preset-5: 28px;
+  --text-preset-5--line-height: 33.6%;
+  --text-preset-5--letter-spacing: 4px;
+
+  --text-preset-6: 28px;
+  --text-preset-6--line-height: 32.1%;
+  --text-preset-6--letter-spacing: 0px;
+
+  --text-preset-7: 14px;
+  --text-preset-7--line-height: 16.8%;
+  --text-preset-7--letter-spacing: 2px;
+
+  --text-preset-8: 16px;
+  --text-preset-8--line-height: 19.2%;
+  --text-preset-8--letter-spacing: 2px;
+
+  --text-preset-9: 18px;
+  --text-preset-9--line-height: 180%;
+  --text-preset-9--letter-spacing: 0px;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
 }
