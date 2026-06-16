@@ -1,8 +1,5 @@
 import type { Metadata } from "next";
-import { PageBackground } from "@/components/shared/page-background";
-import bgDesktop from "./background-desktop.webp";
-import bgMobile from "./background-mobile.webp";
-import bgTablet from "./background-tablet.webp";
+import Hero from "@/components/home/hero";
 
 export const metadata: Metadata = {
   title: "Home",
@@ -10,15 +7,5 @@ export const metadata: Metadata = {
 };
 
 export default function HomePage() {
-  return (
-    <>
-      <PageBackground
-        mobile={bgMobile}
-        tablet={bgTablet}
-        desktop={bgDesktop}
-        priority
-      />
-      <div className=" flex flex-1 flex-col">{/* content */}</div>
-    </>
-  );
+  return <Hero />;
 }

@@ -14,7 +14,7 @@ export function PageBackground({
   priority = false,
 }: PageBackgroundProps) {
   return (
-    <picture className="pointer-events-none fixed inset-0 -z-10 h-full w-full">
+    <picture className="pointer-events-none fixed inset-0 z-0 h-full w-full">
       <source media="(min-width: 1440px)" srcSet={desktop.src} />
       <source media="(min-width: 768px)" srcSet={tablet.src} />
       <img
