@@ -1,0 +1,129 @@
+"use client";
+
+import { DestinationTabs } from "@/components/destination/destination-tabs";
+import { PlanetViewer } from "@/components/destination/planet-viewer";
+import { destinations } from "@/lib/destinations";
+import { motion, type Variants } from "framer-motion";
+import { useState } from "react";
+
+const easeOut = [0.22, 1, 0.36, 1] as const;
+
+const title = "Pick your destination";
+
+const letterContainerVariants: Variants = {
+  initial: {},
+  animate: {
+    transition: {
+      staggerChildren: 0.045,
+      delayChildren: 0.2,
+    },
+  },
+};
+
+const letterVariants: Variants = {
+  initial: { opacity: 0, y: 12 },
+  animate: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.35, ease: easeOut },
+  },
+};
+
+const contentVariants: Variants = {
+  initial: { opacity: 0, y: 16 },
+  animate: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.4, ease: easeOut },
+  },
+};
+
+const HeroDestination = () => {
+  const [activeIndex, setActiveIndex] = useState(0);
+  const activeDestination = destinations[activeIndex];
+
+  return (
+    <div className="flex min-h-0 w-full flex-1 flex-col p-10 md:p-16 lg:p-24 xl:px-38 xl:py-26 2xl:p-40">
+      <div className="flex h-fit">
+        <h1 className="font-barlow-condensed text-preset-5 uppercase tracking-[2.7px]">
+          <motion.span
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.4, ease: easeOut }}
+            className="mr-3 text-white/30"
+          >
+            01
+          </motion.span>
+          <motion.span
+            className="inline-flex flex-wrap"
+            variants={letterContainerVariants}
+            initial="initial"
+            animate="animate"
+            aria-label={title}
+          >
+            {title.split("").map((char, index) => (
+              <motion.span
+                key={`${char}-${index}`}
+                variants={letterVariants}
+                className="inline-block"
+              >
+                {char === " " ? "\u00A0" : char}
+              </motion.span>
+            ))}
+          </motion.span>
+        </h1>
+      </div>
+
+      <div className="my-16 grid w-full grid-cols-1 items-center gap-10 lg:my-34 lg:grid-cols-2 lg:gap-12">
+        <PlanetViewer
+          key={activeDestination.modelPath}
+          modelPath={activeDestination.modelPath}
+          name={activeDestination.name}
+        />
+
+        <motion.div
+          key={activeDestination.name}
+          variants={contentVariants}
+          initial="initial"
+          animate="animate"
+          className="flex flex-col items-center text-center lg:items-start lg:text-left"
+        >
+          <DestinationTabs
+            destinations={destinations}
+            activeIndex={activeIndex}
+            onChange={setActiveIndex}
+          />
+
+          <h2 className="mt-8 font-bellefair text-[56px] uppercase tracking-normal md:text-preset-3">
+            {activeDestination.name}
+          </h2>
+
+          <p className="mt-6 max-w-md font-barlow text-preset-9 text-blue-300">
+            {activeDestination.description}
+          </p>
+
+          <dl className="mt-6 flex w-full max-w-md gap-10 border-t border-white/20 pt-6 md:gap-16">
+            <div>
+              <dt className="font-barlow-condensed text-[14px] uppercase tracking-[2.36px] text-white/50">
+                Avg. Distance
+              </dt>
+              <dd className="mt-1 font-bellefair text-[28px] uppercase">
+                {activeDestination.distance}
+              </dd>
+            </div>
+            <div>
+              <dt className="font-barlow-condensed text-[14px] uppercase tracking-[2.36px] text-white/50">
+                Est. Travel Time
+              </dt>
+              <dd className="mt-1 font-bellefair text-[28px] uppercase">
+                {activeDestination.travel}
+              </dd>
+            </div>
+          </dl>
+        </motion.div>
+      </div>
+    </div>
+  );
+};
+
+export default HeroDestination;

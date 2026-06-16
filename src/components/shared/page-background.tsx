@@ -22,7 +22,7 @@ export function PageBackground({
         alt=""
         aria-hidden="true"
         fetchPriority={priority ? "high" : "auto"}
-        className="h-full w-full object-cover"
+        className="h-full w-full object-cover bg-center bg-no-repeat"
       />
     </picture>
   );
