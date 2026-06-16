@@ -24,7 +24,7 @@ const DestinationContent = () => {
   const activeDestination = destinations[activeIndex];
 
   return (
-    <div className="flex w-full flex-col p-10 pb-24 md:p-16 md:pb-16 lg:min-h-full lg:flex-1 lg:pb-0 lg:p-24 xl:px-38 xl:py-26 2xl:p-40">
+    <div className="flex w-full flex-col p-10 pb-24 md:p-16 md:pb-16 lg:min-h-full lg:flex-1 lg:pb-0 lg:p-24 xl:px-38 xl:py-26 2xl:p-20">
       <div className="flex justify-center md:justify-start mb-1 lg:mb-0 h-fit">
         <AnimatedTittle title={title} number="01" />
       </div>
