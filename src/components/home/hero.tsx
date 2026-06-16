@@ -39,7 +39,7 @@ const Hero = () => {
       variants={containerVariants}
       initial="initial"
       animate="animate"
-      className="flex min-h-0 flex-1 w-full items-center justify-center lg:items-end p-10 md:p-16 lg:p-24 xl:p-32 2xl:p-40"
+      className="flex min-h-0 flex-1 w-full lg:items-end p-10 md:p-16 lg:p-24 xl:p-32 2xl:p-40"
     >
       <div className="grid w-full grid-cols-1 items-end gap-10 lg:gap-0 md:grid-cols-2 md:gap-0">
         <div className="flex w-full lg:max-w-xl flex-col gap-6 items-center lg:gap-0 lg:items-start">
@@ -57,7 +57,7 @@ const Hero = () => {
           </motion.h1>
           <motion.p
             variants={itemVariants}
-            className="mt-6 lg:mt-0 font-barlow text-sm leading-relaxed lg:text-preset-9 text-center lg:text-balance text-blue-300 "
+            className="mt-6 lg:mt-0 font-barlow text-preset-9 text-balance text-blue-300 "
           >
             Let&apos;s face it; if you want to go to space, you might as well
             genuinely go to outer space and not hover kind of on the edge of it.
