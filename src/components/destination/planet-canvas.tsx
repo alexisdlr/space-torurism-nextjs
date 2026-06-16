@@ -44,7 +44,7 @@ export default function PlanetCanvas({ modelPath }: PlanetCanvasProps) {
         gl={{
           antialias: true,
           alpha: true,
-          powerPreference: "high-performance",
+          powerPreference: "default",
         }}
         className="h-full w-full touch-none"
       >

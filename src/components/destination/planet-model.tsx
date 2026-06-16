@@ -2,12 +2,13 @@
 
 import { Center, Resize, useGLTF } from "@react-three/drei";
 import { useFrame } from "@react-three/fiber";
-import { useEffect, useRef } from "react";
+import { useRef } from "react";
 import type { Group } from "three";
+import { destinations } from "@/lib/destinations";
 
-useGLTF.setDecoderPath(
-  "https://www.gstatic.com/draco/versioned/decoders/1.5.7/",
-);
+for (const destination of destinations) {
+  useGLTF.preload(destination.modelPath, true);
+}
 
 type PlanetModelProps = {
   modelPath: string;
@@ -16,10 +17,6 @@ type PlanetModelProps = {
 export function PlanetModel({ modelPath }: PlanetModelProps) {
   const { scene } = useGLTF(modelPath, true);
   const groupRef = useRef<Group>(null);
-
-  useEffect(() => {
-    useGLTF.preload(modelPath, true);
-  }, [modelPath]);
 
   useFrame((_, delta) => {
     if (groupRef.current) {
