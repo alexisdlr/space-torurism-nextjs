@@ -1,4 +1,4 @@
-import HeroDestination from "@/components/destination/hero-destination";
+import DestinationContent from "@/components/destination/destination-content";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -7,5 +7,5 @@ export const metadata: Metadata = {
 };
 
 export default function DestinationPage() {
-  return <HeroDestination />;
+  return <DestinationContent />;
 }

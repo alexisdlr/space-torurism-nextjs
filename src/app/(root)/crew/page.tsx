@@ -1,10 +1,10 @@
 import type { Metadata } from "next";
-
+import CrewContent from "@/components/crew/crew-content";
 export const metadata: Metadata = {
   title: "Crew",
   description: "Meet your crew for the trip",
 };
 
 export default function CrewPage() {
-  return <div className="flex flex-1 flex-col">{/* content */}</div>;
+  return <CrewContent />;
 }

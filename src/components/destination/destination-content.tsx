@@ -5,29 +5,10 @@ import { PlanetViewer } from "@/components/destination/planet-viewer";
 import { destinations } from "@/lib/destinations";
 import { motion, type Variants } from "framer-motion";
 import { useState } from "react";
-
-const easeOut = [0.22, 1, 0.36, 1] as const;
+import AnimatedTittle from "../shared/animated-tittle";
 
 const title = "Pick your destination";
-
-const letterContainerVariants: Variants = {
-  initial: {},
-  animate: {
-    transition: {
-      staggerChildren: 0.045,
-      delayChildren: 0.2,
-    },
-  },
-};
-
-const letterVariants: Variants = {
-  initial: { opacity: 0, y: 12 },
-  animate: {
-    opacity: 1,
-    y: 0,
-    transition: { duration: 0.35, ease: easeOut },
-  },
-};
+const easeOut = [0.22, 1, 0.36, 1] as const;
 
 const contentVariants: Variants = {
   initial: { opacity: 0, y: 16 },
@@ -38,40 +19,14 @@ const contentVariants: Variants = {
   },
 };
 
-const HeroDestination = () => {
+const DestinationContent = () => {
   const [activeIndex, setActiveIndex] = useState(0);
   const activeDestination = destinations[activeIndex];
 
   return (
     <div className="flex w-full flex-col p-10 pb-24 md:p-16 md:pb-16 lg:min-h-full lg:flex-1 lg:pb-0 lg:p-24 xl:px-38 xl:py-26 2xl:p-40">
       <div className="flex justify-center md:justify-start mb-1 lg:mb-0 h-fit">
-        <h1 className="font-barlow-condensed text-lg lg:text-3xl text-center lg:text-left text-preset-5 uppercase tracking-[2.7px]">
-          <motion.span
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.4, ease: easeOut }}
-            className="mr-3 text-white/30"
-          >
-            01
-          </motion.span>
-          <motion.span
-            className="inline-flex flex-wrap"
-            variants={letterContainerVariants}
-            initial="initial"
-            animate="animate"
-            aria-label={title}
-          >
-            {title.split("").map((char, index) => (
-              <motion.span
-                key={`${char}-${index}`}
-                variants={letterVariants}
-                className="inline-block"
-              >
-                {char === " " ? "\u00A0" : char}
-              </motion.span>
-            ))}
-          </motion.span>
-        </h1>
+        <AnimatedTittle title={title} number="01" />
       </div>
 
       <div className="my-4 grid w-full grid-cols-1 items-center gap-10 lg:my-34 lg:grid-cols-2 lg:gap-32">
@@ -126,4 +81,4 @@ const HeroDestination = () => {
   );
 };
 
-export default HeroDestination;
+export default DestinationContent;
