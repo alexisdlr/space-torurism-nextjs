@@ -27,12 +27,12 @@ const CrewContent = () => {
             initial={{ opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.35, ease: easeOut }}
-            className="flex px-3 lg:px-6 flex-col items-center gap-1 text-center lg:items-start lg:text-left"
+            className="flex px-3 lg:px-6 flex-col items-center gap-1 md:gap-8 lg:gap-10 text-center lg:items-start lg:text-left"
           >
             <span className="inline-block border border-white/25 px-4 py-2 font-bellefair text-base lg:text-[28px] uppercase tracking-normal text-white/35">
               {activeCrewMember.role}
             </span>
-            <h2 className="font-bellefair text-[28px] uppercase tracking-normal md:text-[56px] lg:text-preset-3">
+            <h2 className="font-bellefair text-[28px] uppercase tracking-normal md:text-[56px] leading-[128.57%] ">
               {activeCrewMember.name}
             </h2>
             <p className="max-w-[520px] mt-2 lg:mt-0 font-barlow text-base leading-[180%] text-blue-300 md:text-preset-9">

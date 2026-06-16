@@ -1,3 +1,4 @@
+import TechnologyContent from "@/components/technology/technology-content";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -6,5 +7,5 @@ export const metadata: Metadata = {
 };
 
 export default function TechnologyPage() {
-  return <div className="flex flex-1 flex-col">{/* content */}</div>;
+  return <TechnologyContent />;
 }
